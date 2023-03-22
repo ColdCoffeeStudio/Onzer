@@ -1,23 +1,47 @@
 body{
-  background-color: #32323D;
+  font-family: 'Roboto', sans-serif;
+  padding: 0;
+  margin: 0;
+  background-color: #1d1d24;
   color: #fff;
 }
 
-
-
-svg{
-  width: 200px;
-  height: 200px;
+.sideBar{
+  width: 220px;
+  height: 85vh;
+  position: fixed;
+  background-color: #32323D;
+  color: #fff;
+  border-right: 1px solid #6a6a6a;
 }
 
-.st0{fill-rule:evenodd;clip-rule:evenodd;fill:#40AB5D;}
-.st1{fill-rule:evenodd;clip-rule:evenodd;fill:url(#rect8192_1_);}
-.st2{fill-rule:evenodd;clip-rule:evenodd;fill:url(#rect8199_1_);}
-.st3{fill-rule:evenodd;clip-rule:evenodd;fill:url(#rect8206_1_);}
-.st4{fill-rule:evenodd;clip-rule:evenodd;fill:url(#rect8213_1_);}
-.st5{fill-rule:evenodd;clip-rule:evenodd;fill:url(#rect8220_1_);}
-.st6{fill-rule:evenodd;clip-rule:evenodd;fill:url(#rect8227_1_);}
-.st7{fill-rule:evenodd;clip-rule:evenodd;fill:url(#rect8234_1_);}
-.st8{fill-rule:evenodd;clip-rule:evenodd;fill:url(#rect8241_1_);}
-.st9{fill-rule:evenodd;clip-rule:evenodd;fill:url(#rect8248_1_);}
+.sideBar img{
+  padding-left: 24px;
+  width: 120px;
+}
 
+.sideBar .nav a{
+  padding-left: 24px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.sideBar .nav ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sideBar .nav a:hover{
+  /* border-left: 4px solid #fa4a56; */
+  color: #fa4a56;
+  text-decoration: none;
+}
+
+.sideBar .nav a:focus{
+  border-left: 4px solid #fa4a56;
+  color: #fa4a56;
+  text-decoration: none;
+}

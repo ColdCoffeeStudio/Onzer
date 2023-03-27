@@ -65,23 +65,3 @@ body{
   color: #fff;
   border-top: 1px solid #6a6a6a;
 }
-
-.play .playButon{
-  margin-left: 15px;
-  height: 30px;
-}
-
-.play .playPrev{
-  rotate: 180deg;
-  height: 25px;
-}
-
-.play .commande{
-  padding-top: 35px;
-  padding-left: 60px;
-}
-
-.play .playNext{
-  margin-left: 15px;
-  height: 25px;
-}

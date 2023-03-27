@@ -33,12 +33,9 @@
 </header>
 
 <footer class="play">
-	<div class="commande">
-		<img class="playPrev" src="./assets/play-next-2.svg">
-		<img class="playButon" src="./assets/play-button-svgrepo-com.svg">
-		<img class="playNext" src="./assets/play-next-2.svg">
-	</div>
-	
+	<audio controls autoplay>
+		<source src="./assets/borderline.mp3" type="audio/mpeg">
+	</audio>
 </footer>
 
 </template>

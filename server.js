@@ -4,12 +4,14 @@ const cors = require("cors");
 const db = require("./app/models");
 
 const app = express();
+const path = require('path');
 
 var corsOptions = {
-  origin: "http://localhost:8081"
+  origin: "http://localhost:5556"
 };
 
 app.use(cors(corsOptions));
+app.use(express.static(path.join(__dirname, 'app/views/')));
 
 // parse requests of content-type - application/json
 app.use(bodyParser.json());
@@ -32,11 +34,14 @@ db.mongoose
 
 // simple route
 app.get("/", (req, res) => {
-  res.json({ message: "Onzer : Deezer but better." });
+  console.log(path.join(__dirname, 'app/views/index.html'));
+  //res.sendFile(path.join(__dirname, 'app/views/index.html'));
 });
 
+require("./app/routes/onzer.routes")(app);
+
 // set port, listen for requests
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 5555;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
 });

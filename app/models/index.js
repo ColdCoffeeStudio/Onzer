@@ -6,6 +6,6 @@ mongoose.Promise = global.Promise;
 const db = {};
 db.mongoose = mongoose;
 db.url = dbConfig.url;
-db.tutorials = require("./onzer.model.js")(mongoose);
+db.musics = require("./onzer.model.js")(mongoose);
 
 module.exports = db;

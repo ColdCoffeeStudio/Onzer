@@ -7,6 +7,7 @@ body{
 }
 
 .sideBar{
+  padding-top: -100px;
   width: 220px;
   height: 100vh;
   position: fixed;
@@ -67,7 +68,19 @@ body{
   border-top: 1px solid #6a6a6a;
 }
 
+
 audio{
   padding-top: 20px;
   width: 500px;
+}
+
+
+.card {
+  padding-top: 10px;
+  padding-left: 500px;
+}
+
+.music{
+  margin: 0;
+  padding-top: 20px;
 }

@@ -38,11 +38,32 @@
 	</audio>
 </footer>
 
+<div>
+    <ul class="music">
+      <li class="card" v-for="musique in musiques" :key="musique._id">
+        <p class="titre">{{ musique.titre }}</p>
+        <p class="artiste">{{ musique.artiste }}</p>
+        <p class="album">{{ musique.album }}</p>
+        <p class="duree">{{ musique.duree }}s</p>
+      </li>
+    </ul>
+  </div>
 </template>
 
 
 <script>
-  export default {
-    name: 'App'
+import axios from 'axios';
+
+export default {
+  data() {
+    return {
+      musiques: []
+    };
+  },
+  mounted() {
+    axios.get('http://localhost:3000/api/musiques')
+      .then(response => this.musiques = response.data)
+      .catch(error => console.log(error));
   }
+};
 </script>

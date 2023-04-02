@@ -7,7 +7,7 @@
 
 <script>
 
-  import MusicApp from '../components/MusicApp.vue';
+  import MusicApp from './components/MusicApp.vue';
 
   export default {
     name: 'App',

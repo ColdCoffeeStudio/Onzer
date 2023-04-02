@@ -7,11 +7,10 @@ const app = express();
 const path = require('path');
 
 var corsOptions = {
-  origin: "http://localhost:5556"
+  origin: "http://localhost:8081"
 };
 
 app.use(cors(corsOptions));
-app.use(express.static(path.join(__dirname, 'app/views/')));
 
 // parse requests of content-type - application/json
 app.use(bodyParser.json());
@@ -34,14 +33,13 @@ db.mongoose
 
 // simple route
 app.get("/", (req, res) => {
-  console.log(path.join(__dirname, 'app/views/index.html'));
-  //res.sendFile(path.join(__dirname, 'app/views/index.html'));
+  res.json({ message: "Welcome to the Onzer application."});
 });
 
 require("./app/routes/onzer.routes")(app);
 
 // set port, listen for requests
-const PORT = process.env.PORT || 5555;
+const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
 });

@@ -10,32 +10,46 @@ const musiqueSchema = new mongoose.Schema({
   titre: String,
   artiste: String,
   album: String,
-  duree: Number
+  duree: Number,
+  path: String,
+  affiche: String
 });
 
 // Modèle pour les musiques
 const Musique = mongoose.model('Musique', musiqueSchema);
+
+Musique.deleteMany({}).then(function(){
+  console.log("Data deleted"); // Success
+}).catch(function(error){
+  console.log(error); // Failure
+});
 
 // Créer des musiques
 const musique1 = new Musique({
   titre: 'Bohemian Rhapsody',
   artiste: 'Queen',
   album: 'A Night at the Opera',
-  duree: 354
+  duree: 354,
+  path: 'musiques/BohemianRhapsody.mp3',
+  affiche: 'https://i.pinimg.com/originals/f8/4b/d7/f84bd76e01dfa9605ab6b1f4c1c46403.jpg'
 });
 
 const musique2 = new Musique({
-  titre: 'Stairway to Heaven',
-  artiste: 'Led Zeppelin',
-  album: 'Led Zeppelin IV',
-  duree: 482
+  titre: 'Feu de bois',
+  artiste: 'Damso',
+  album: 'Lithopédion',
+  duree: 183,
+  path: 'musiques/FeuDeBois.mp3',
+  affiche: 'https://www.thebackpackerz.com/wp-content/uploads/2018/09/damso-lithopedion-backpackerz.jpg'
 });
 
 const musique3 = new Musique({
-  titre: 'Hotel California',
-  artiste: 'Eagles',
-  album: 'Hotel California',
-  duree: 390
+  titre: 'Borderline',
+  artiste: 'Columbine',
+  album: 'Adieu, au revoir',
+  duree: 168,
+  path: 'musiques/Borderline.mp3',
+  affiche: 'https://raplume.eu/wp-content/uploads/2019/04/D00vYMgX4AAoYLp.jpg'
 });
 
 // Enregistrer les musiques dans la base de données

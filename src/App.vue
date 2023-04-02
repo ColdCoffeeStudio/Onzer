@@ -41,6 +41,7 @@
 <div>
     <ul class="music">
       <li class="card" v-for="musique in musiques" :key="musique._id">
+        <img :src="musique.affiche" alt="test">
         <p class="titre">{{ musique.titre }}</p>
         <p class="artiste">{{ musique.artiste }}</p>
         <p class="album">{{ musique.album }}</p>

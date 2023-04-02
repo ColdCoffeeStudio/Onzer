@@ -18,7 +18,9 @@ const musiqueSchema = new mongoose.Schema({
   titre: String,
   artiste: String,
   album: String,
-  duree: Number
+  duree: Number,
+  path: String,
+  affiche: String
 });
 
 // Modèle pour les musiques
@@ -35,11 +37,20 @@ app.post('/api/musiques', async (req, res) => {
     titre: req.body.titre,
     artiste: req.body.artiste,
     album: req.body.album,
-    duree: req.body.duree
+    duree: req.body.duree,
+    path: req.body.path,
+    affiche: req.body.affiche
   });
   await musique.save();
   res.send(musique);
 });
+
+app.delete('/api/musiques/:id', async (req, res) => {
+  const musique = await Musique.findByIdAndRemove(req.params.id);
+  res.send(musique);
+});
+
+
 
 // Démarrer le serveur
 const port = process.env.PORT || 3000;

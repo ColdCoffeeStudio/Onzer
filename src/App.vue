@@ -33,14 +33,14 @@
 </header>
 
 <footer class="play">
-	<audio controls autoplay>
-		<source src="./assets/borderline.mp3" type="audio/mpeg">
+	<audio controls autoplay class="audio">
+		<source class="musicPlayer" src="" type="audio/mpeg">
 	</audio>
 </footer>
 
 <div>
     <ul class="music">
-      <li class="card" v-for="musique in musiques" :key="musique._id">
+      <li class="card" v-for="musique in musiques" :key="musique._id" v-on:click="playMusic(musique.path)">
         <img :src="musique.affiche" alt="test">
         <p class="titre">{{ musique.titre }}</p>
         <p class="artiste">{{ musique.artiste }}</p>
@@ -65,6 +65,18 @@ export default {
     axios.get('http://localhost:3000/api/musiques')
       .then(response => this.musiques = response.data)
       .catch(error => console.log(error));
+  },
+  methods: {
+    playMusic(musique) {
+      let musicPlayer = document.querySelector('.musicPlayer');
+      let audio = document.querySelector('.audio');
+      musicPlayer.src = `${musique}`;
+      audio.load();
+      audio.play();
+    }
   }
 };
+
+
+
 </script>
